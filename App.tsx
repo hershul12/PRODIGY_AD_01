@@ -70,24 +70,11 @@ const App = () => {
       <View style={{ backgroundColor: "#40A2E3", alignItems: "center", justifyContent: "center",height:"11%" }}>
         <Text style={{ color: "white", fontSize: 40 }} >---------Calculator---------</Text>
       </View>
-      <View>
+      <View style={{marginBottom:5}}>
         <Text style={{fontSize:35}}>{displayValue}</Text>
       </View>
-      <View style={{ marginTop: 20, backgroundColor: "#E0F4FF", height: "80%", gap: -15 }}>
-        <View style={{ flexDirection: "row",justifyContent:'space-between',margin:20 }}>
-          <TouchableOpacity style={{ width: 40, height: 40 }} onPress={() => handleClearPress()}>
-            <Text style={{ fontSize: 35 }}>C</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={{ fontSize: 35 }}>%</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <Text style={{ fontSize: 35 }}>%</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={{ fontSize: 35 }}>C</Text>
-          </TouchableOpacity>
-        </View>
+      <View style={{ backgroundColor: "#E0F4FF", height: "90%", gap: -15,marginTop:70 }}>
+        
         <View style={{ flexDirection: "row",justifyContent:'space-between',margin:20 }}>
           <TouchableOpacity style={{ width: 40, height: 40 }} onPress={() => handleNumberPress(7)}>
             <Text style={{ fontSize: 35 }}>7</Text>
@@ -117,27 +104,27 @@ const App = () => {
           </TouchableOpacity>
         </View>
         <View style={{ flexDirection: "row",justifyContent:'space-between',margin:20 }}>
-          <TouchableOpacity style={{ width: 40, height: 40 }}>
-            <Text style={{ fontSize: 35 }}>1</Text>
+          <TouchableOpacity style={{ width: 40, height: 40 }} onPress={() => handleNumberPress(1)}>
+            <Text style={{ fontSize: 35 }} >1</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => handleNumberPress(2)}>
             <Text style={{ fontSize: 35 }}>2</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => handleNumberPress(3)}>
           <Text style={{ fontSize: 35 }}>3</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => handleOperatorPress("+")}>
             <Text style={{ fontSize: 35 }}>+</Text>
           </TouchableOpacity>
         </View>
         <View style={{ flexDirection: "row",justifyContent:'space-between',margin:20 }}>
-          <TouchableOpacity style={{ width: 40, height: 40 }}>
-            <Text style={{ fontSize: 35 }}>00</Text>
+          <TouchableOpacity style={{ width: 40, height: 40 }} onPress={()=> handleClearPress("C")}>
+            <Text style={{ fontSize: 35 }}>C</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=> handleNumberPress(0)}>
             <Text style={{ fontSize: 35 }}>0</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=> handleNumberPress(".")}>
           <Text style={{ fontSize: 35 }}>.</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={handleEqualsPress}>
